@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Login</h2>
+  <form th:action="@{/login/mypage}" method="post">
+      <p>
+              <label for="empNum">사원번호</label>
+              <input type="text" name="empNum"/>
+          </P>
+          <p>
+                  <label for="empPassword">비밀번호</label>
+                  <input type="password" name="empPassword"/>
+              </p>
+      <input type="submit" value="가입하기"></input>
+  </form>
+</body>
+</html>
