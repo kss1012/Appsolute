@@ -1,7 +1,7 @@
 package com.solution.appsolute.service.login;
 
-import com.solution.appsolute.dao.login.LoginDao;
-import com.solution.appsolute.dao.login.LoginDto;
+import com.solution.appsolute.dto.login.LoginDto;
+import com.solution.appsolute.mapper.LoginMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 public class LoginService {
 
     @Autowired
-    LoginDao loginDao;
+    private LoginMapper loginMapper;
 
-    public void login(LoginDto loginDto) {
 
-        loginDao.login(loginDto);
-    }
+    public LoginDto selectByEmp_num(Long emp_num) {
+           return loginMapper.selectByEmp_num(emp_num);
+       }
 }
