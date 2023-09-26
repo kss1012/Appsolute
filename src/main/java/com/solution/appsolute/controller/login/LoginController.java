@@ -22,7 +22,6 @@ public class LoginController {
 
     @GetMapping("/")
         public String getLogin() {
-
             return "/login/login";
         }
 
@@ -37,8 +36,9 @@ public class LoginController {
             HttpSession session = request.getSession(true);
             session.setMaxInactiveInterval(7200);
             // 세션에 사용자 정보를 저장합니다.
-            session.setAttribute("emp_num", loginDto);
-            logger.info("emp_num in session: " + session.getAttribute("emp_num"));
+            session.setAttribute("emp_num", loginDto.getEmp_num());
+
+
             return "/login/mypage";
         } else {
             return "redirect:/";
